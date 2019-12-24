@@ -5,6 +5,7 @@
 #include <climits>
 #include <cstdlib>
 #include <fstream>
+#include <gmpxx.h>
 #include <iostream>
 #include <math.h>
 #include <queue>
@@ -15,5 +16,7 @@
 #include <vector>
 #include <boost/algorithm/string.hpp>
 
+
+using namespace std;
 
 #endif
