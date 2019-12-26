@@ -11,6 +11,7 @@
 
 #include "common.h"
 #include "Graph.h"
+#include "Transition.h"
 
 using namespace std;
 
