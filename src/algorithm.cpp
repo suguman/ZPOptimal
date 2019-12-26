@@ -59,6 +59,11 @@ mpq_class valueiteratie(Graph* gg, int df){
 
     
     //Initialize costvectoraux
+
+    //Based on player id, we maximize or minimize
+    //Player 0 is max player
+    //Player 1 is min player
+
     unordered_map<int, mpq_class> costvectoraux;
     unordered_map<int, int> :: iterator q;
     for(q = stateplayermap->begin(); q != stateplayermap->end(); q++){
@@ -128,8 +133,9 @@ mpq_class valueiteratie(Graph* gg, int df){
     }
     
   }
-  
-  return -1;
+
+  mpq_class returnvalue = costvector.at(gg->getInitial());
+  return returnvalue;
 }
 
 mpq_class optimalvalue(mpq_class cost, int df){
