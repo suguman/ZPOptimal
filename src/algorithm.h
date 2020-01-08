@@ -19,5 +19,6 @@ mpq_class valueiterate(Graph* gg, int df);
 
 mpq_class optimalvalue(mpq_class cost, int df);
 
+int winner(mpq_class optval, int threshold);
 
 #endif

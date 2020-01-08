@@ -13,26 +13,30 @@ int main(int argc, char** argv){
   int value = stoi(argv[3]);
 
   Graph* gamegraph = readGraph(filename);
-  gamegraph->printAll();
+  //gamegraph->printAll();
 
   
   mpq_class a, b, c, cost;
 
   cost = valueiterate(gamegraph, df);
 
-  cout << cost << endl;
+  //cout << cost << endl;
   
-  a = 1234.5;
-  b = (5,2);
-  c = a+b;
+  //a = 1234.5;
+  //b = (5,2);
+  //c = a+b;
   
-  cout << cmp(b,a) << endl;
+  //cout << cmp(b,a) << endl;
   
-  cout << "sum is " << c << "\n";
+  //cout << "sum is " << c << "\n";
 
   
   
-  cout << "absolute value is " << abs(c) << "\n";
+  //cout << "absolute value is " << abs(c) << "\n";
 
+  int winning = winner(cost, value);
+
+  cout << "Winning player is " << winning << endl;
+  
   return 0;
 }
