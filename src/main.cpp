@@ -18,7 +18,7 @@ int main(int argc, char** argv){
   
   mpq_class a, b, c, cost;
 
-  cost = valueiteratie(gamegraph, df);
+  cost = valueiterate(gamegraph, df);
 
   cout << cost << endl;
   

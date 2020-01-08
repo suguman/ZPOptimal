@@ -14,7 +14,7 @@
 
 using namespace std;
 
-mpq_class valueiteratie(Graph* gg, int df){
+mpq_class valueiterate(Graph* gg, int df){
 
   unordered_map<int, vector< Transition*>>* transfunc = gg->getTrans();
   unordered_map<int, int>* stateplayermap = gg->getStateToPlayer();
@@ -51,7 +51,7 @@ mpq_class valueiteratie(Graph* gg, int df){
 
   //to check number of iterations
   //int numiterations = numstates*numstates;
-  int numiterations = 10;
+  int numiterations = numstates*numstates ;
 
   for(int i=0; i<numiterations; i++){
 
@@ -86,17 +86,17 @@ mpq_class valueiteratie(Graph* gg, int df){
       
       mpq_class temp;
       int playerid = stateplayermap->at(state);
-      cout << "Current state is " << state << endl;
-      cout << "Player id is " << playerid << endl;
-      cout << "Cost vector of state is " << costvector[state] << endl;
+      //cout << "Current state is " << state << endl;
+      //cout << "Player id is " << playerid << endl;
+      //cout << "Cost vector of state is " << costvector[state] << endl;
       
       for (auto & element : translist){
-	cout << "Trans is ";
+	//cout << "Trans is ";
 	element->toString();
 	int deststate = element->getDest();
 	int transweight = element->getWt();
 	temp = transweight + (costvector[state]/df);
-	cout << "Value from this transition is  " << temp << endl;
+	//cout << "Value from this transition is  " << temp << endl;
 
 	//Based on player id, we maximize or minimize
 	//Player 0 is max player
@@ -113,7 +113,7 @@ mpq_class valueiteratie(Graph* gg, int df){
 	  }
 	}
 
-	cout << "Cost vector aux (Updated value) is " << costvectoraux[state] << endl;
+	//cout << "Cost vector aux (Updated value) is " << costvectoraux[state] << endl;
       }
     }
 
@@ -131,7 +131,8 @@ mpq_class valueiteratie(Graph* gg, int df){
       mpq_class returnvalue = costvector.at(gg->getInitial());
       return returnvalue;
     }
-    
+
+    cout << "Value is " << costvector.at(gg->getInitial()) << endl;
   }
 
   mpq_class returnvalue = costvector.at(gg->getInitial());

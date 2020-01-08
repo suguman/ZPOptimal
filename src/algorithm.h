@@ -15,7 +15,7 @@
 
 using namespace std;
 
-mpq_class valueiteratie(Graph* gg, int df);
+mpq_class valueiterate(Graph* gg, int df);
 
 mpq_class optimalvalue(mpq_class cost, int df);
 
