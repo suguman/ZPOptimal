@@ -10,31 +10,24 @@ int main(int argc, char** argv){
   
   string filename = argv[1];
   int df = stoi(argv[2]);
-  int value = stoi(argv[3]);
+  mpq_class value = stoi(argv[3]);
+  string operation = argv[4];
 
+  int winning;
+    
   Graph* gamegraph = readGraph(filename);
+  
   //gamegraph->printAll();
 
+  if (operation == "optimize"){    
+    //mpq_class cost;    
+    winning = valueiterate(gamegraph, df, 0, value);
+    //winning = winner(cost, value);
+  }
   
-  mpq_class a, b, c, cost;
-
-  cost = valueiterate(gamegraph, df);
-
-  //cout << cost << endl;
-  
-  //a = 1234.5;
-  //b = (5,2);
-  //c = a+b;
-  
-  //cout << cmp(b,a) << endl;
-  
-  //cout << "sum is " << c << "\n";
-
-  
-  
-  //cout << "absolute value is " << abs(c) << "\n";
-
-  int winning = winner(cost, value);
+  if( operation == "safety"){
+    winning = valueiterate(gamegraph, df, 1, value);
+  }
 
   cout << "Winning player is " << winning << endl;
   

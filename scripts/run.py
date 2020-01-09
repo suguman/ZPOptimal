@@ -28,7 +28,7 @@ while(line!=""):
     inputfilename = benchmarkdir + filename
     outputfilename = outputdir + filename
 
-    commandline = " ".join(["timeout ", str(timeout), "time", srcfile, inputfilename, str(df), str(v)])
+    commandline = " ".join(["timeout ", str(timeout), "time", srcfile, inputfilename, str(df), str(v), "safety"])
     print(commandline)
     os.system(commandline)
 
